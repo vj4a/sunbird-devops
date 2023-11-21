@@ -1,10 +1,11 @@
 ---
 - name: Unarchive the geoip mmdb compressed file to graylog machines
-  become: yes
+  # become: yes
   unarchive:
     src: "files/{{ graylog_geoip_compressed_file_name }}"
     dest: "/tmp/"
-  delegate_to: localhost
+  # delegate_to: localhost
+  debug: true
 
 - name: Copy the geoip mmdb file to coorect path on graylog machines
   # become: yes
