@@ -6,6 +6,7 @@
 
 - name: Copy the geoip mmdb file to coorect path on graylog machines
   copy:
+    become: yes
     src: "/tmp/{{ graylog_geoip_compressed_file_name.split('.')[0] }}/{{ graylog_geoip_file_name }}"
     dest: "{{ graylog_geo_ip_file_name }}"
     remote_src: yes
