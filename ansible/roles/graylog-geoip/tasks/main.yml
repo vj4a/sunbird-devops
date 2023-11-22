@@ -1,8 +1,8 @@
 ---
-- name: Unarchive the geoip mmdb compressed file to graylog machines
-  unarchive:
-    src: "files/{{ graylog_geoip_compressed_file_name }}"
-    dest: "/tmp/"
+# - name: Unarchive the geoip mmdb compressed file to graylog machines
+#   unarchive:
+#     src: "files/{{ graylog_geoip_compressed_file_name }}"
+#     dest: "/tmp/"
 
 - name: Copy the geoip mmdb file to coorect path on graylog machines
   copy:
