@@ -30,12 +30,12 @@ node() {
                 values.put('artifact', artifact)
                 values.put('ignore_job_parameter', true)
                 
-                stage('get artifact') {
-                    artifact_download(values)
-                }
+                // stage('get artifact') {
+                //     artifact_download(values)
+                // }
 
                 stage('deploy artifact') {
-                    sh "mv ${artifact} ansible/roles/graylog-geoip/files/"
+                    // sh "mv ${artifact} ansible/roles/graylog-geoip/files/"
                     ansiblePlaybook = "${currentWs}/ansible/graylog-geoip.yaml"
                     ansibleExtraArgs = "--extra-vars \"graylog_geoip_compressed_file_name=${artifact} graylog_geoip_file_name=${params.graylog_geoip_file_name}\" --vault-password-file /var/lib/jenkins/secrets/vault-pass"
                     values.put('ansiblePlaybook', ansiblePlaybook)
