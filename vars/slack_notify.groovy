@@ -21,7 +21,8 @@ def call(String buildStatus, String release_tag=null, String jobName=null, int b
                 if (jobName == null)
                     jobName = env.JOB_NAME
                 if (buildNumber == 0)
-                    buildNumber = env.BUILD_NUMBER.toInteger()
+                    // buildNumber = env.BUILD_NUMBER.toInteger()
+                    buildNumber = env.BUILD_NUMBER
                     // buildNumber = Integer.parseInt(env.BUILD_NUMBER);
                 if (jobUrl == null)
                     jobUrl = env.JOB_URL
