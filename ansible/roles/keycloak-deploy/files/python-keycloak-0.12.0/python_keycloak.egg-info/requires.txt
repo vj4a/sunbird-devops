@@ -1,3 +1,2 @@
-
 httmock==1.2.5
 python-jose==1.4.0
